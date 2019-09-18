@@ -1,0 +1,59 @@
+/* Add a black background color to the top navigation bar */
+
+body {
+  font-family: Helvetica;
+}
+
+.titleAndSearch {
+  margin: 0px auto;
+  width: 40%;
+  margin-bottom: 2em;
+  border-style: solid;
+  border-width: 1.5px;
+  border-color: grey;
+}
+
+.artistTable {
+  margin: 0px auto;
+}
+
+.artistTitle {
+  text-align: center;
+}
+
+
+.topnav {
+  text-align:center;
+  margin-bottom: 2em;
+  }
+
+.topnavTextbox {
+  width: 80%;
+}
+
+ tr {
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  vertical-align: top;
+}
+
+td {
+  border: 1px solid grey;
+}
+
+.artistName {
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 300px;
+  font-family: 'Franklin Gothic Medium'
+}
+
+.artistDescription {
+
+}
+
+th, td:hover {
+  background-color: rgba(82, 80, 81, 0.863);
+}
