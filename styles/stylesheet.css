@@ -39,6 +39,10 @@ body {
   vertical-align: top;
 }
 
+table {
+  border-collapse: collapse;
+}
+
 td {
   border: 1px solid grey;
 }
