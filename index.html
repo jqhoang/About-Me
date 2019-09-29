@@ -2,20 +2,22 @@
     <head>
         <link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
     </head>
+    <script src="scripts/scripts.js"></script>
 <div class="titleAndSearch">
-    <h1 class="artistTitle">
+    <h2 class="artistTitle">
         Artist Directory
-    </h1>
+    </h2>
     <div class="topnav">
-        <input class = "topnavTextbox" type="text" placeholder="">
+        <span><input class = "topnavTextbox" type="text" placeholder=""> <button id = "showArtistFormButton" onclick = "showArtistForm()" type="button">Add Artist</button></span>
     </div>
 </div>
-<table class="artistTable">
-    <tr><td><img src="https://randomuser.me/api/portraits/med/women/1.jpg"/></td><td class="artistName">Lady<p class = "artistDescription">Description</p></td></tr>
-    <tr><td><img src="https://randomuser.me/api/portraits/med/women/2.jpg"/></td><td class="artistName">Lady<p class = "artistDescription">Description</p></td></tr>
-    <tr><td><img src="https://randomuser.me/api/portraits/med/women/3.jpg"/></td><td class="artistName">Lady<p class = "artistDescription">Description</p></td></tr>
-    <tr><td><img src="https://randomuser.me/api/portraits/med/women/4.jpg"/></td><td class="artistName">Lady<p class = "artistDescription">Description</p></td></tr>
-    <tr><td><img src="https://randomuser.me/api/portraits/med/women/5.jpg"/></td><td class="artistName">Lady<p class = "artistDescription">Description</p></td></tr>
+<div id = "addArtistForm">
+    <input type="text" class = "artistInput" id = "artistName" name="artistName" value = "" placeholder="Artist Name"><br>
+    <input type="text" class = "artistInput" id = "aboutArtist" name="aboutArtist" value = "" placeholder="About Artist"><br>
+    <input type="text" class = "artistInput" id = "imageURL" name="imageURL" value="" placeholder = "Image URL"><br>
+    <button id = "addArtistButton" type="button" onclick = "addArtist()">Add</button>
+</div>
+<table id = "artistTable">
 </table>
 
 
