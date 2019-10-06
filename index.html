@@ -1,14 +1,15 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html>
-    <head>
+<body onload="loadArtistTable()">
+<head>
         <link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
     </head>
     <script src="scripts/scripts.js"></script>
 <div class="titleAndSearch">
-    <h2 class="artistTitle">
+    <h2 id = "test" class="artistTitle">
         Artist Directory
     </h2>
     <div class="topnav">
-        <span><input class = "topnavTextbox" type="text" placeholder=""> <button id = "showArtistFormButton" onclick = "showArtistForm()" type="button">Add Artist</button></span>
+        <span><input id = "searchField" class = "topnavTextbox" type="text" placeholder=""><button id = "searchArtistsButton" onclick = "searchArtists()" type = "button">Search</button><button id = "showArtistFormButton" onclick = "showArtistForm()" type="button">Add Artist</button></span>
     </div>
 </div>
 <div id = "addArtistForm">

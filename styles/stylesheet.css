@@ -91,6 +91,16 @@ th, td:hover {
   padding: 10px;
 }
 
+#searchArtistsButton {
+  background-color: lightgrey;
+  color: black;
+  border: none;
+  text-align:center;
+  font-size: 18px;
+  font-family:Helvetica;
+  padding: 10px;
+}
+
 #addArtistButton {
   background-color: lightgrey;
   color: black;
@@ -102,7 +112,7 @@ th, td:hover {
   width: 15%;
 }
 
-#deleteArtistButton {
+.deleteArtistButton {
   background-color: red;
   border-style: solid;
   border-color: red;
