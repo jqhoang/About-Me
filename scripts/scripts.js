@@ -141,9 +141,9 @@ function addArtist() {
     
     fetch('https://jqhoang.github.io/About-Me/').then((data) =>
     {
-        var artistName = data.artistName;
-        var aboutArtist = data.aboutArtist;
-        var artistImageURL = data.artistImageURL;
+        var artistName = data.artistName.innerText;
+        var aboutArtist = data.aboutArtist.innerText;
+        var artistImageURL = data.artistImageURL.innerText;
         console.log(artistName);
         console.log(aboutArtist);
         console.log(artistImageURL);
