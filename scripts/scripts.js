@@ -2,6 +2,7 @@ var artistCount = localStorage.length == 0 ? 0 : parseInt(localStorage.getItem("
 
 function loadArtistTable ()
 {
+  //Read from file to populate instead of local storage
   var artistTable = document.getElementById("artistTable");
   Object.keys(localStorage).forEach(function(key)
   {
@@ -127,7 +128,6 @@ function showArtistForm() {
 
 function deleteArtist(deleteArtistButton) {
     deleteArtistButton.parentNode.parentNode.parentNode.removeChild(deleteArtistButton.parentNode.parentNode);
-    console.log("This del btn id is: " + deleteArtistButton.id);
     localStorage.removeItem(String(deleteArtistButton.id));
 }
 
@@ -173,4 +173,16 @@ function addArtist() {
     deleteArtistButton.setAttribute("onclick", "deleteArtist(this)");
     deleteArtistButton.innerText = "Delete";
     aboutArtistNameAndDescriptionCell.appendChild(deleteArtistButton);
+
+
+    fetch('https://jqhoang.github.io/About-Me/').
+    then((res) => res.json() ).   // obtain data as json
+    then( (data) => {
+        console.log(JSON.stringify(data));          
+        artistName = document.getElementById('artistName').textContent = data.number;
+        aboutArtist = document.getElementById('aboutArtist').textContent = data.text;
+        artistImageURL = document.getElementById('imageURL').textContent = data.type;
+        console.log(artistName, aboutArtist, artistImageURL);
+    }).
+    catch((err) => console.log(err));
 }
