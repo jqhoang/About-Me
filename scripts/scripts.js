@@ -133,19 +133,34 @@ function deleteArtist(deleteArtistButton) {
 
 function addArtist() {
     var artistTable = document.getElementById("artistTable");
+    /*
     var artistName = document.getElementById("artistName").value;
     var aboutArtist = document.getElementById("aboutArtist").value;
-    var artistImageURL = document.getElementById("imageURL").value;
-    artistCount++;
-    var artistID = artistCount;
-    console.log(artistCount);
-    saveLastKey(artistCount);
-    var newArtist = [artistName, aboutArtist, artistImageURL, String(artistID)];
-    window.localStorage.setItem(String(artistCount), JSON.stringify(newArtist));
+    var artistImageURL = document.getElementById("imageURL").value;*/
+
+    
+    fetch('https://jqhoang.github.io/About-Me/').then((data) =>
+    {
+        var artistName = data.artistName;
+        var aboutArtist = data.aboutArtist;
+        var artistImageURL = data.artistImageURL;
+        console.log(artistName);
+        console.log(aboutArtist);
+        console.log(artistImageURL);
+    })
     if (artistImageURL == "")
     {
         artistImageURL = "https://randomuser.me/api/portraits/med/men/1.jpg";
     }
+
+    artistCount++;
+    var artistID = artistCount;
+    saveLastKey(artistCount);
+    var newArtist = [artistName, aboutArtist, artistImageURL, String(artistID)];
+    window.localStorage.setItem(String(artistCount), JSON.stringify(newArtist));
+
+
+
     var row = artistTable.insertRow(0);
     row.setAttribute("id", "artistTableRow");
 
@@ -174,15 +189,27 @@ function addArtist() {
     deleteArtistButton.innerText = "Delete";
     aboutArtistNameAndDescriptionCell.appendChild(deleteArtistButton);
 
-
-    fetch('https://jqhoang.github.io/About-Me/').
-    then((res) => res.json() ).   // obtain data as json
+    /*
+    fetch('https://jqhoang.github.io/About-Me/').  // obtain data as json
     then( (data) => {
-        console.log(JSON.stringify(data));          
+        alert(data);         
         artistName = document.getElementById('artistName').textContent = data.number;
         aboutArtist = document.getElementById('aboutArtist').textContent = data.text;
         artistImageURL = document.getElementById('imageURL').textContent = data.type;
         console.log(artistName, aboutArtist, artistImageURL);
     }).
     catch((err) => console.log(err));
+    
+    let request = new Request('http://localhost:3000/add', {
+    headers: new Headers({
+        'Content-Type': 'text/json' 
+    }),
+    method: 'GET'
+    });
+
+    fetch(request).then((response) => {
+        console.log(response);
+    });
+    
+    */
 }
